@@ -1,7 +1,7 @@
 #!/bin/bash
 
-. gadget.config
-
+. $PWD/gadget.config
+CURDIR=$PWD
 SYSDIR=/sys/kernel/config
 
 # Probe libcomposite if not probe
@@ -37,7 +37,7 @@ echo $subclass > functions/hid.usb0/subclass
 echo $reportlength > functions/hid.usb0/report_length
 
 # Set HID Report Description
-cat $reportdescpath > functions/hid.usb0/report_desc
+cat $CURDIR/$reportdescpath > functions/hid.usb0/report_desc
 
 # Bind configuration
 ln -s functions/hid.usb0 configs/c.1

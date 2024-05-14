@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. gadget.config
+. $PWD/gadget.config
 
 SYSDIR=/sys/kernel/config/usb_gadget/
 DEVDIR=$SYSDIR/$address
